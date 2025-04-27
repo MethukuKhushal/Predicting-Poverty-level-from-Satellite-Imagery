@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Poverty Prediction Using Satellite Images</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/img/favicon.png" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Squadfree - v4.6.0
+  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>Poverty Prediction Using Satellite Images</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{{ url_for('first')}}">Home</a></li>
+           
+          <li><a class="nav-link scrollto" href="{{ url_for('login')}}">Login</a></li>
+
+<li><a class="nav-link scrollto" href="{{ url_for('upload')}}">Clustering</a></li>
+
+
+          <li><a class="nav-link scrollto" href="{{ url_for('predict')}}">Prediction</a></li>
+
+
+          </ul>
+              </li>
+			    <li class="dropdown"><a href="#"><span>Analysis</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{{ url_for('chart')}}">Accuracy</a></li>
+                  <li><a href="{{ url_for('wealth')}}">Wealth Chart</a></li>
+                                </ul>
+              </li>
+		 
+           
+           </ul>
+
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+ <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-up">
+      <h1>Poverty Prediction Using Satellite Images</h1>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+
+   
+
+
+
+  </section> 
+
+ 
+
+    
+
+ 
+ <html>
+  <head>
+   
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['type', 'percentage'],
+          ['Poor',     45],
+          ['Average',     25],
+          ['Developed',      30],
+                  ]);
+
+        var options = {
+          title: '',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+  </br>
+   <center><h1>Poor VS Average VS Developed </h1></center> 
+   <center> <div id="piechart_3d" style="width: 900px; height: 500px;"></div></center>
+  </body>
+</html>
+</br>
+</br>
+</br>
+
+   
+
+
+
+
+
+
+
+
+
+
+<html>
+   <head>
+      <title></title>
+      <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+      </script>
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['corechart','line']});  
+      </script>
+   </head>
+   
+   <body>
+   <center><h1>Accuracy Plot</h1></center> 
+   </br>
+   </br>
+   
+      <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto">
+      </div>
+      <script language = "JavaScript">
+         function drawChart() {
+            // Define the chart to be drawn.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Month');
+            data.addColumn('number', 'Training_Accuracy');
+            data.addColumn('number', 'Testing_Accuracy');
+                         
+            data.addRows([
+                
+               ['10',  0.75,0.74],
+               ['20',  0.82,0.81],
+               
+               ['30',  0.85,0.86],
+               ['40',  0.95,0.94],
+               ['50',  0.98,0.96],
+                
+            ]);
+               
+            // Set chart options
+            var options = {'title' : '',
+               hAxis: {
+                  title: 'Epoches'
+               },
+               vAxis: {
+                  title: 'Accuracy'
+               },   
+               'width':550,
+               'height':400	  
+            };
+
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.LineChart(document.getElementById('container'));
+            chart.draw(data, options);
+         }
+         google.charts.setOnLoadCallback(drawChart);
+      </script>
+   </body>
+</html>
+			 
+ 
+
+			
+			
+			
+			
+			
+			
+			</div>
+          </div>
+        </div>		  
+		  
+		  
+		  
+				  
+		
+		
+		
+		
+      <!-- Portfolio Grid Items -->
+         </div> 
+    </section> 
+   
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+     
+
+    <div class="container">
+      <div class="copyright">
+        
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+         
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>
