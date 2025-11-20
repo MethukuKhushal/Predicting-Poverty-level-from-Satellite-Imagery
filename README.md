@@ -15,7 +15,7 @@ Follow these steps to set up the project locally:
 
 1. Clone the repository:
 
-   git clone https://github.com/Navyasreenavi/satelite_detection.git
+   git clone https://github.com/Mkhushal/satelite_detection.git
 
 
 2. Install the required dependencies:
