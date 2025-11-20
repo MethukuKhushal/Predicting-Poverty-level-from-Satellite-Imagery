@@ -44,4 +44,4 @@ python detect.py --input samples/sample1.jpg --output results/result1.jpg
 This project is licensed under the [MIT License](LICENSE).
 
 #Contact Information
-For any inquiries, please reach out to [Navyasreenavi](https://github.com/Navyasreenavi).
+For any inquiries, please reach out to [M Khushal](https://github.com/MethukuKhushal).
