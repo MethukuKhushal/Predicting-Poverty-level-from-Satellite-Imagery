@@ -15,7 +15,7 @@ Follow these steps to set up the project locally:
 
 1. Clone the repository:
 
-   git clone https://github.com/Mkhushal/satelite_detection.git
+   git clone [https://github.com/Mkhushal/satelite_detection.git](https://github.com/MethukuKhushal/Predicting-Poverty-level-from-Satellite-Imagery)
 
 
 2. Install the required dependencies:
